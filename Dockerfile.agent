@@ -9,6 +9,7 @@ COPY go.sum /src/go.sum
 WORKDIR /src
 RUN go mod download
 COPY . /src
+COPY requirements.txt /app/requirements.txt 
 WORKDIR /src/cmd/agent
 ARG GIT_COMMIT=dev
 ARG GIT_DATE=00000000 
