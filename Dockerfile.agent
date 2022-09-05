@@ -4,6 +4,7 @@ ARG APP_BASE_IMAGE=ubuntu:20.04
 FROM $GOLANG_BUILD_IMAGE as build-env
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y libpcap-dev
 RUN mkdir /src
+RUN mkdir /app 
 COPY go.mod /src/go.mod  
 COPY go.sum /src/go.sum
 WORKDIR /src
